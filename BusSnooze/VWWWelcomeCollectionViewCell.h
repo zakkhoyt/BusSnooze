@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface VWWWelcomeCollectionViewCell : UICollectionViewCell
-
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) UIImage *image;
 @end

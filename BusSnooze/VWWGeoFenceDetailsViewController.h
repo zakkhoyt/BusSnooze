@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class VWWGeoFenceDetailsViewController;
+@class VWWGeoFence;
+@protocol VWWGeoFenceDetailsViewControllerDelegate <NSObject>
+-(void)geoFenceDetailsViewControllerDetailButtonAction:(VWWGeoFenceDetailsViewController*)sender;
+-(void)geoFenceDetailsViewControllerDoneButtonAction:(VWWGeoFenceDetailsViewController*)sender;
+@end
 @interface VWWGeoFenceDetailsViewController : UIViewController
-
+@property (nonatomic) BOOL detailsVisible;
+@property (nonatomic, weak) id <VWWGeoFenceDetailsViewControllerDelegate> delegate;
+@property (nonatomic, strong) VWWGeoFence *geoFence;
+-(void)updateTitle:(NSString*)title;
 @end

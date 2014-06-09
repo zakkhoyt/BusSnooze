@@ -19,4 +19,5 @@ typedef enum {
     VWWUnitTypeFeet = 1,
 } VWWUnitType;
 
+static NSString *VWWNotificationApplicationDidBecomeActive = @"VWWNotificationApplicationDidBecomeActive";
 #endif

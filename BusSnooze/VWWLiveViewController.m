@@ -7,28 +7,33 @@
 //
 
 #import "VWWLiveViewController.h"
+#import "VWW.h"
+@import MapKit;
 
-@interface VWWLiveViewController ()
-
+@interface VWWLiveViewController () <MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) VWWMKUserLocationBlock userLocationBlock;
 @end
 
 @implementation VWWLiveViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    [self performAfterFindingLocation:^(MKUserLocation *userLocation) {
+        [self zoomToLocation:userLocation.location animated:NO];
+    }];
+
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -45,5 +50,45 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void)performAfterFindingLocation:(VWWMKUserLocationBlock)userLocationBlock{
+    if (self.mapView.userLocation.location != nil) {
+        if (userLocationBlock) {
+            userLocationBlock(self.mapView.userLocation);
+        }
+    } else {
+        self.userLocationBlock = [userLocationBlock copy];
+    }
+}
+
+-(void)zoomToLocation:(CLLocation*)location animated:(BOOL)animated{
+    VWW_LOG_DEBUG(@"Zooming to location is %f,%f", location.coordinate.latitude, location.coordinate.longitude);
+    MKCoordinateSpan span = MKCoordinateSpanMake(VWW_COORDINATE_REGION_SPAN, VWW_COORDINATE_REGION_SPAN);
+    MKCoordinateRegion region = MKCoordinateRegionMake(location.coordinate, span);
+    [self.mapView setRegion:region animated:animated];
+}
+
+
+-(void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate animated:(BOOL)animated{
+    VWW_LOG_DEBUG(@"Zooming to location is %f,%f", coordinate.latitude, coordinate.longitude);
+    MKCoordinateSpan span = MKCoordinateSpanMake(VWW_COORDINATE_REGION_SPAN, VWW_COORDINATE_REGION_SPAN);
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, span);
+    [self.mapView setRegion:region animated:animated];
+}
+
+
+
+#pragma mark MapViewDelegate
+
+- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
+    if(self.userLocationBlock){
+        self.userLocationBlock(aUserLocation);
+        _userLocationBlock = nil;
+    }
+}
+
+
+
 
 @end

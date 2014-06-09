@@ -1,5 +1,5 @@
 //
-//  VWWMapViewController.h
+//  VWWGeoFenceMapViewController.h
 //  BusSnooze
 //
 //  Created by Zakk Hoyt on 6/8/14.
@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VWWMapViewController : UIViewController
+@class VWWGeoFenceMapViewController;
+@class VWWGeoFence;
 
+@protocol VWWGeoFenceMapViewControllerDelegate <NSObject>
+-(void)geoFenceMapViewController:(VWWGeoFenceMapViewController*)sender didAddGeoFence:(VWWGeoFence*)geoFence;
+@end
+
+@interface VWWGeoFenceMapViewController : UIViewController
+@property (nonatomic, weak) id <VWWGeoFenceMapViewControllerDelegate> delegate;
 @end

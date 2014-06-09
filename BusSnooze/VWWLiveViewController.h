@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface VWWLiveViewController : UIViewController
-
+@property (nonatomic, strong) NSArray *geoFences;
 @end

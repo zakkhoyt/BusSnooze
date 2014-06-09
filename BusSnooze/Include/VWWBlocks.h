@@ -9,6 +9,7 @@
 #ifndef VWW_iOS_SMBlocks_h
 #define VWW_iOS_SMBlocks_h
 @class CLLocation;
+@class MKUserLocation;
 @class VWWToken;
 typedef void (^VWWArrayBlock)(NSArray *array);
 typedef void (^VWWBoolBlock)(BOOL success);

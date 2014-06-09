@@ -7,8 +7,12 @@
 //
 
 #import "VWWGeoFenceDetailsViewController.h"
+#import "VWWGeoFence.h"
 
 @interface VWWGeoFenceDetailsViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *enabledSwitch;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -26,7 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.detailsVisible = NO;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.enabledSwitch.on = self.geoFence.enabled;
+    self.titleTextField.text = self.geoFence.title;
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,4 +56,27 @@
 }
 */
 
+- (IBAction)detailsButtonTouchUpInside:(id)sender {
+    [self.delegate geoFenceDetailsViewControllerDetailButtonAction:self];
+}
+
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    self.geoFence.title = textField.text;
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)doneButtonTouchUpInside:(id)sender {
+    [self.delegate geoFenceDetailsViewControllerDoneButtonAction:self];
+}
+
+- (IBAction)enabledSwitchValueChanged:(UISwitch*)sender {
+    self.geoFence.enabled = sender.on;
+}
+
+-(void)updateTitle:(NSString*)title{
+    self.titleTextField.text = title;
+    self.geoFence.title = title;
+}
 @end

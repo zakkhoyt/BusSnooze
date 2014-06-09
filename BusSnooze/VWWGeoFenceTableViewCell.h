@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class VWWGeoFence;
 @interface VWWGeoFenceTableViewCell : UITableViewCell
-
+@property (nonatomic, strong) VWWGeoFence *geoFence;
 @end

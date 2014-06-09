@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "VWW.h"
 
 @interface VWWLocationController : NSObject
 + (instancetype)sharedInstance;
+
+-(void)promptForPermission;
+-(void)start;
+-(void)stop;
+
+-(void)setChangeSettingsBlock:(VWWEmptyBlock)changeSettingsBlock;
+-(BOOL)verifyCoreLocationAccess;
 @end

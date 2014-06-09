@@ -7,12 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF13290A19452162003750EE /* VWWGeoFenceDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF13290919452162003750EE /* VWWGeoFenceDetailsViewController.m */; };
+		CF13290E1945410E003750EE /* VWWGeoFencesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF13290D1945410E003750EE /* VWWGeoFencesTableViewCell.m */; };
+		CF1329111945425E003750EE /* VWWLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1329101945425E003750EE /* VWWLiveViewController.m */; };
+		CF4F532319451BB3006A15EF /* VWWGeoFenceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4F532219451BB3006A15EF /* VWWGeoFenceTableViewCell.m */; };
 		CF8D96BB1944F5C200276684 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96BA1944F5C200276684 /* main.m */; };
 		CF8D96BE1944F5C200276684 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96BD1944F5C200276684 /* AppDelegate.m */; };
-		CF8D96C11944F5C200276684 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96C01944F5C200276684 /* ViewController.m */; };
 		CF8D96C41944F5C200276684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF8D96C21944F5C200276684 /* Main.storyboard */; };
 		CF8D96C61944F5C200276684 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF8D96C51944F5C200276684 /* Images.xcassets */; };
 		CF8D96D21944F5C200276684 /* BusSnoozeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96D11944F5C200276684 /* BusSnoozeTests.m */; };
+		CF8D96DD1944F5DE00276684 /* VWWGeoFenceMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96DC1944F5DE00276684 /* VWWGeoFenceMapViewController.m */; };
+		CF8D96E81944F66200276684 /* VWWGeofenceView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96E51944F66200276684 /* VWWGeofenceView.m */; };
+		CF8D96EF1944F6AF00276684 /* VWWLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96ED1944F6AF00276684 /* VWWLocationController.m */; };
+		CF8D96F11944F77A00276684 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8D96F01944F77A00276684 /* MapKit.framework */; };
+		CF8D96F41944F7D900276684 /* VWWWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96F31944F7D900276684 /* VWWWelcomeViewController.m */; };
+		CF8D96FB1944FA3C00276684 /* VWWGeoFence.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8D96FA1944FA3C00276684 /* VWWGeoFence.m */; };
+		CFC011D51944FC040071AF58 /* VWWGeoFencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC011D41944FC040071AF58 /* VWWGeoFencesViewController.m */; };
+		CFC011D819450C310071AF58 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC011D719450C310071AF58 /* NSTimer+Blocks.m */; };
+		CFC011DE194513C30071AF58 /* VWWWelcomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC011DD194513C30071AF58 /* VWWWelcomeCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,18 +38,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF13290819452162003750EE /* VWWGeoFenceDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeoFenceDetailsViewController.h; sourceTree = "<group>"; };
+		CF13290919452162003750EE /* VWWGeoFenceDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeoFenceDetailsViewController.m; sourceTree = "<group>"; };
+		CF13290C1945410E003750EE /* VWWGeoFencesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeoFencesTableViewCell.h; sourceTree = "<group>"; };
+		CF13290D1945410E003750EE /* VWWGeoFencesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeoFencesTableViewCell.m; sourceTree = "<group>"; };
+		CF13290F1945425E003750EE /* VWWLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLiveViewController.h; sourceTree = "<group>"; };
+		CF1329101945425E003750EE /* VWWLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLiveViewController.m; sourceTree = "<group>"; };
+		CF4F532119451BB3006A15EF /* VWWGeoFenceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeoFenceTableViewCell.h; sourceTree = "<group>"; };
+		CF4F532219451BB3006A15EF /* VWWGeoFenceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeoFenceTableViewCell.m; sourceTree = "<group>"; };
 		CF8D96B51944F5C200276684 /* BusSnooze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusSnooze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D96B91944F5C200276684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF8D96BA1944F5C200276684 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF8D96BC1944F5C200276684 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF8D96BD1944F5C200276684 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CF8D96BF1944F5C200276684 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CF8D96C01944F5C200276684 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CF8D96C31944F5C200276684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF8D96C51944F5C200276684 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF8D96CB1944F5C200276684 /* BusSnoozeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusSnoozeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8D96D01944F5C200276684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF8D96D11944F5C200276684 /* BusSnoozeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusSnoozeTests.m; sourceTree = "<group>"; };
+		CF8D96DB1944F5DE00276684 /* VWWGeoFenceMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeoFenceMapViewController.h; sourceTree = "<group>"; };
+		CF8D96DC1944F5DE00276684 /* VWWGeoFenceMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeoFenceMapViewController.m; sourceTree = "<group>"; };
+		CF8D96DF1944F62E00276684 /* VWW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWW.h; sourceTree = "<group>"; };
+		CF8D96E01944F62E00276684 /* VWWBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBlocks.h; sourceTree = "<group>"; };
+		CF8D96E11944F62E00276684 /* VWWDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDefines.h; sourceTree = "<group>"; };
+		CF8D96E21944F62E00276684 /* VWWTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTypes.h; sourceTree = "<group>"; };
+		CF8D96E51944F66200276684 /* VWWGeofenceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeofenceView.m; sourceTree = "<group>"; };
+		CF8D96E61944F66200276684 /* VWWGeofenceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeofenceView.h; sourceTree = "<group>"; };
+		CF8D96ED1944F6AF00276684 /* VWWLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWLocationController.m; sourceTree = "<group>"; };
+		CF8D96EE1944F6AF00276684 /* VWWLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWLocationController.h; sourceTree = "<group>"; };
+		CF8D96F01944F77A00276684 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CF8D96F21944F7D900276684 /* VWWWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeViewController.h; sourceTree = "<group>"; };
+		CF8D96F31944F7D900276684 /* VWWWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeViewController.m; sourceTree = "<group>"; };
+		CF8D96F91944FA3C00276684 /* VWWGeoFence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeoFence.h; sourceTree = "<group>"; };
+		CF8D96FA1944FA3C00276684 /* VWWGeoFence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeoFence.m; sourceTree = "<group>"; };
+		CFC011D31944FC040071AF58 /* VWWGeoFencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeoFencesViewController.h; sourceTree = "<group>"; };
+		CFC011D41944FC040071AF58 /* VWWGeoFencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeoFencesViewController.m; sourceTree = "<group>"; };
+		CFC011D619450C310071AF58 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		CFC011D719450C310071AF58 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		CFC011DC194513C30071AF58 /* VWWWelcomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeCollectionViewCell.h; sourceTree = "<group>"; };
+		CFC011DD194513C30071AF58 /* VWWWelcomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8D96F11944F77A00276684 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,9 +98,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF13290719452147003750EE /* GeoFence */ = {
+			isa = PBXGroup;
+			children = (
+				CF8D96DB1944F5DE00276684 /* VWWGeoFenceMapViewController.h */,
+				CF8D96DC1944F5DE00276684 /* VWWGeoFenceMapViewController.m */,
+				CF13290819452162003750EE /* VWWGeoFenceDetailsViewController.h */,
+				CF13290919452162003750EE /* VWWGeoFenceDetailsViewController.m */,
+			);
+			name = GeoFence;
+			sourceTree = "<group>";
+		};
+		CF13291219454264003750EE /* Live */ = {
+			isa = PBXGroup;
+			children = (
+				CF13290F1945425E003750EE /* VWWLiveViewController.h */,
+				CF1329101945425E003750EE /* VWWLiveViewController.m */,
+			);
+			name = Live;
+			sourceTree = "<group>";
+		};
+		CF4F532019451B99006A15EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CF4F532119451BB3006A15EF /* VWWGeoFenceTableViewCell.h */,
+				CF4F532219451BB3006A15EF /* VWWGeoFenceTableViewCell.m */,
+				CF13290C1945410E003750EE /* VWWGeoFencesTableViewCell.h */,
+				CF13290D1945410E003750EE /* VWWGeoFencesTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		CF8D96AC1944F5C200276684 = {
 			isa = PBXGroup;
 			children = (
+				CF8D96F01944F77A00276684 /* MapKit.framework */,
 				CF8D96B71944F5C200276684 /* BusSnooze */,
 				CF8D96CE1944F5C200276684 /* BusSnoozeTests */,
 				CF8D96B61944F5C200276684 /* Products */,
@@ -79,13 +151,15 @@
 		CF8D96B71944F5C200276684 /* BusSnooze */ = {
 			isa = PBXGroup;
 			children = (
-				CF8D96BC1944F5C200276684 /* AppDelegate.h */,
-				CF8D96BD1944F5C200276684 /* AppDelegate.m */,
-				CF8D96BF1944F5C200276684 /* ViewController.h */,
-				CF8D96C01944F5C200276684 /* ViewController.m */,
-				CF8D96C21944F5C200276684 /* Main.storyboard */,
+				CFC011D619450C310071AF58 /* NSTimer+Blocks.h */,
+				CFC011D719450C310071AF58 /* NSTimer+Blocks.m */,
+				CF8D96E91944F66900276684 /* Controller */,
 				CF8D96C51944F5C200276684 /* Images.xcassets */,
+				CF8D96DE1944F62E00276684 /* Include */,
+				CF8D96C21944F5C200276684 /* Main.storyboard */,
+				CF8D96F81944FA2100276684 /* Model */,
 				CF8D96B81944F5C200276684 /* Supporting Files */,
+				CF8D96EA1944F67200276684 /* View */,
 			);
 			path = BusSnooze;
 			sourceTree = "<group>";
@@ -93,6 +167,8 @@
 		CF8D96B81944F5C200276684 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CF8D96BC1944F5C200276684 /* AppDelegate.h */,
+				CF8D96BD1944F5C200276684 /* AppDelegate.m */,
 				CF8D96B91944F5C200276684 /* Info.plist */,
 				CF8D96BA1944F5C200276684 /* main.m */,
 			);
@@ -114,6 +190,93 @@
 				CF8D96D01944F5C200276684 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF8D96DE1944F62E00276684 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				CF8D96DF1944F62E00276684 /* VWW.h */,
+				CF8D96E01944F62E00276684 /* VWWBlocks.h */,
+				CF8D96E11944F62E00276684 /* VWWDefines.h */,
+				CF8D96E21944F62E00276684 /* VWWTypes.h */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		CF8D96E91944F66900276684 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF8D96EC1944F6A000276684 /* NonGUI */,
+				CF8D96EB1944F69C00276684 /* GUI */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CF8D96EA1944F67200276684 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF8D96E61944F66200276684 /* VWWGeofenceView.h */,
+				CF8D96E51944F66200276684 /* VWWGeofenceView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CF8D96EB1944F69C00276684 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				CF13290719452147003750EE /* GeoFence */,
+				CFC011DF1945186C0071AF58 /* GeoFences */,
+				CF13291219454264003750EE /* Live */,
+				CFC011DA194513930071AF58 /* Welcome */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		CF8D96EC1944F6A000276684 /* NonGUI */ = {
+			isa = PBXGroup;
+			children = (
+				CF8D96EE1944F6AF00276684 /* VWWLocationController.h */,
+				CF8D96ED1944F6AF00276684 /* VWWLocationController.m */,
+			);
+			name = NonGUI;
+			sourceTree = "<group>";
+		};
+		CF8D96F81944FA2100276684 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF8D96F91944FA3C00276684 /* VWWGeoFence.h */,
+				CF8D96FA1944FA3C00276684 /* VWWGeoFence.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CFC011DA194513930071AF58 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				CFC011DB194513AC0071AF58 /* Cell */,
+				CF8D96F21944F7D900276684 /* VWWWelcomeViewController.h */,
+				CF8D96F31944F7D900276684 /* VWWWelcomeViewController.m */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		CFC011DB194513AC0071AF58 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CFC011DC194513C30071AF58 /* VWWWelcomeCollectionViewCell.h */,
+				CFC011DD194513C30071AF58 /* VWWWelcomeCollectionViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		CFC011DF1945186C0071AF58 /* GeoFences */ = {
+			isa = PBXGroup;
+			children = (
+				CF4F532019451B99006A15EF /* Cell */,
+				CFC011D31944FC040071AF58 /* VWWGeoFencesViewController.h */,
+				CFC011D41944FC040071AF58 /* VWWGeoFencesViewController.m */,
+			);
+			name = GeoFences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +378,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8D96C11944F5C200276684 /* ViewController.m in Sources */,
+				CF4F532319451BB3006A15EF /* VWWGeoFenceTableViewCell.m in Sources */,
 				CF8D96BE1944F5C200276684 /* AppDelegate.m in Sources */,
+				CF13290A19452162003750EE /* VWWGeoFenceDetailsViewController.m in Sources */,
+				CF8D96E81944F66200276684 /* VWWGeofenceView.m in Sources */,
+				CFC011DE194513C30071AF58 /* VWWWelcomeCollectionViewCell.m in Sources */,
+				CF8D96DD1944F5DE00276684 /* VWWGeoFenceMapViewController.m in Sources */,
 				CF8D96BB1944F5C200276684 /* main.m in Sources */,
+				CF8D96FB1944FA3C00276684 /* VWWGeoFence.m in Sources */,
+				CF8D96EF1944F6AF00276684 /* VWWLocationController.m in Sources */,
+				CF8D96F41944F7D900276684 /* VWWWelcomeViewController.m in Sources */,
+				CFC011D819450C310071AF58 /* NSTimer+Blocks.m in Sources */,
+				CF1329111945425E003750EE /* VWWLiveViewController.m in Sources */,
+				CF13290E1945410E003750EE /* VWWGeoFencesTableViewCell.m in Sources */,
+				CFC011D51944FC040071AF58 /* VWWGeoFencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +578,7 @@
 				CF8D96D71944F5C200276684 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF8D96D81944F5C200276684 /* Build configuration list for PBXNativeTarget "BusSnoozeTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +587,7 @@
 				CF8D96DA1944F5C200276684 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,28 +7,20 @@
 //
 
 #import "VWWGeoFenceTableViewCell.h"
+#import "VWWGeoFence.h"
+
+@interface VWWGeoFenceTableViewCell ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *enabledSwitch;
+@end
 
 @implementation VWWGeoFenceTableViewCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+-(void)setGeoFence:(VWWGeoFence *)geoFence{
+    _geoFence = geoFence;
+    self.titleLabel.text = _geoFence.title;
+    self.enabledSwitch.on = _geoFence.enabled;
 }
 
 @end
