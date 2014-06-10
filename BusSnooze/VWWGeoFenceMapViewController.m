@@ -15,7 +15,7 @@
 #import "VWWGeoFenceDetailsViewController.h"
 
 
-@interface VWWGeoFenceMapViewController () <MKMapViewDelegate, VWWGeoFenceDetailsViewControllerDelegate>
+@interface VWWGeoFenceMapViewController () <MKMapViewDelegate, VWWGeoFenceDetailsViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) VWWLocationController *locationController;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) VWWMKUserLocationBlock userLocationBlock;
@@ -23,6 +23,9 @@
 @property (nonatomic, strong) VWWGeoFenceDetailsViewController *detailsViewController;
 @property (nonatomic, strong) UIVisualEffectView *visualEffectView;
 @property (nonatomic, strong) VWWGeoFence *geoFence;
+@property (nonatomic, strong) NSMutableArray *searchResults;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic) BOOL hasLoaded;
 @end
 
 @implementation VWWGeoFenceMapViewController
@@ -50,9 +53,9 @@
     
 
     CGFloat w = self.view.bounds.size.width;
-    CGFloat h = 193;
+    CGFloat h = 215;
     CGFloat x = 0;
-    CGFloat y = self.view.bounds.size.height - 44;
+    CGFloat y = 64 - 215;
     self.visualEffectView = [[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
     self.visualEffectView.frame = CGRectMake(x, y, w, h);
     [self.view addSubview:self.visualEffectView];
@@ -61,6 +64,7 @@
     self.detailsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"VWWGeoFenceDetailsViewController"];
     self.detailsViewController.delegate = self;
     self.detailsViewController.geoFence = self.geoFence;
+    self.detailsViewController.mapView = self.mapView;
     [self.visualEffectView.contentView addSubview:self.detailsViewController.view];
 
 }
@@ -69,6 +73,23 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    
+    if(self.hasLoaded == NO){
+        self.hasLoaded = YES;
+        CGFloat x = 0;
+        CGFloat y = 215;
+        CGFloat w = self.view.frame.size.width;
+        CGFloat h = self.view.frame.size.height - 215;
+        CGRect frame = CGRectMake(x, y, w, h);
+        
+        self.searchResults = [@[]mutableCopy];
+        self.tableView = [[UITableView alloc]initWithFrame:frame style:UITableViewStylePlain];
+        self.tableView.alpha = 0.0;
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        [self.view addSubview:self.tableView];
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -155,9 +176,9 @@
 
 
 -(void)addGeoFence{
-    VWWGeofenceView *geofence = [[VWWGeofenceView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
-    geofence.center = self.view.center;
-    [self.view addSubview:geofence];
+    self.geoFenceView = [[VWWGeofenceView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
+    self.geoFenceView.center = self.view.center;
+    [self.view addSubview:self.geoFenceView];
 
 }
 
@@ -207,21 +228,44 @@
 }
 
 
+#pragma mark UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.searchResults.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    MKMapItem *item = self.searchResults[indexPath.row];
+    cell.textLabel.text = item.name;
+    return cell;
+}
+
+
+
+
 #pragma mark VWWGeoFenceDetailsViewControllerDelegate
 -(void)geoFenceDetailsViewControllerDetailButtonAction:(VWWGeoFenceDetailsViewController*)sender{
     if(sender.detailsVisible == NO){
         CGRect frame = self.visualEffectView.frame;
-        frame.origin.y = self.view.bounds.size.height - frame.size.height;
+        frame.origin.y = 0;
         [UIView animateWithDuration:0.2 delay:0 usingSpringWithDamping:1.0 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.visualEffectView.frame = frame;
+            self.tableView.alpha = 1.0;
+            self.geoFenceView.alpha = 0.0;
         } completion:^(BOOL finished) {
             self.detailsViewController.detailsVisible = YES;
         }];
     } else {
         CGRect frame = self.visualEffectView.frame;
-        frame.origin.y = self.view.bounds.size.height - 44;
+        frame.origin.y = 64 - 215;
         [UIView animateWithDuration:0.2 delay:0 usingSpringWithDamping:1.0 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             self.visualEffectView.frame = frame;
+            self.tableView.alpha = 0.0;
+            self.geoFenceView.alpha = 1.0;
         } completion:^(BOOL finished) {
             self.detailsViewController.detailsVisible = NO;
         }];
@@ -230,12 +274,24 @@
 
 
 -(void)geoFenceDetailsViewControllerDoneButtonAction:(VWWGeoFenceDetailsViewController*)sender{
-//    [self.navigationController popViewControllerAnimated:YES];
-    
-    
     [self.delegate geoFenceMapViewController:self didAddGeoFence:self.geoFence];
     [self dismissViewControllerAnimated:YES completion:^{
         
+    }];
+}
+
+
+-(void)geoFenceDetailsViewController:(VWWGeoFenceDetailsViewController*)sender didUpdateSearch:(NSString*)searchText{
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc] init];
+    request.naturalLanguageQuery = searchText;
+    request.region = self.mapView.region;
+    
+    MKLocalSearch *search = [[MKLocalSearch alloc]initWithRequest:request];
+    
+    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+        [self.searchResults removeAllObjects];
+        [self.searchResults addObjectsFromArray:response.mapItems];
+        [self.tableView reloadData];
     }];
 }
 

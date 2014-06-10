@@ -13,11 +13,47 @@
                         <viewControllerLayoutGuide type="bottom" id="FId-Ps-L3x"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yy4-i4-cJd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="215"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view appearanceType="aqua" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47z-8P-oBG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="151"/>
+                                <subviews>
+                                    <searchBar appearanceType="aqua" contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="VBW-7w-Fgk">
+                                        <rect key="frame" x="0.0" y="107" width="320" height="44"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="1UU-b3-C5F" id="duF-lQ-xha"/>
+                                        </connections>
+                                    </searchBar>
+                                    <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" clearsOnBeginEditing="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="N7E-a4-EW7">
+                                        <rect key="frame" x="20" y="77" width="280" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="1UU-b3-C5F" id="zbp-eP-sV8"/>
+                                        </connections>
+                                    </textField>
+                                    <switch appearanceType="aqua" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psx-hK-uZF">
+                                        <rect key="frame" x="251" y="38" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="enabledSwitchValueChanged:" destination="1UU-b3-C5F" eventType="valueChanged" id="pPS-NP-dTd"/>
+                                        </connections>
+                                    </switch>
+                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxw-Du-Vfu">
+                                        <rect key="frame" x="20" y="25" width="37" height="44"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonTouchUpInside:" destination="1UU-b3-C5F" eventType="touchUpInside" id="4WY-e5-ylZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbi-bV-PgY">
-                                <rect key="frame" x="253" y="0.0" width="47" height="44"/>
+                                <rect key="frame" x="253" y="171" width="47" height="44"/>
                                 <state key="normal" title="Details">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -25,33 +61,6 @@
                                     <action selector="detailsButtonTouchUpInside:" destination="1UU-b3-C5F" eventType="touchUpInside" id="Mhf-O9-ODU"/>
                                 </connections>
                             </button>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" clearsOnBeginEditing="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="N7E-a4-EW7">
-                                <rect key="frame" x="20" y="52" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="1UU-b3-C5F" id="zbp-eP-sV8"/>
-                                </connections>
-                            </textField>
-                            <switch appearanceType="aqua" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Psx-hK-uZF">
-                                <rect key="frame" x="252" y="90" width="51" height="31"/>
-                                <connections>
-                                    <action selector="enabledSwitchValueChanged:" destination="1UU-b3-C5F" eventType="valueChanged" id="pPS-NP-dTd"/>
-                                </connections>
-                            </switch>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxw-Du-Vfu">
-                                <rect key="frame" x="20" y="0.0" width="37" height="44"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doneButtonTouchUpInside:" destination="1UU-b3-C5F" eventType="touchUpInside" id="4WY-e5-ylZ"/>
-                                </connections>
-                            </button>
-                            <searchBar appearanceType="aqua" contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="VBW-7w-Fgk">
-                                <rect key="frame" x="0.0" y="129" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -60,7 +69,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="200"/>
+                    <size key="freeformSize" width="320" height="215"/>
                     <connections>
                         <outlet property="enabledSwitch" destination="Psx-hK-uZF" id="uHf-Yt-bLA"/>
                         <outlet property="searchBar" destination="VBW-7w-Fgk" id="GFg-8m-kXM"/>
@@ -69,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tuh-07-vXt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2227" y="1088"/>
+            <point key="canvasLocation" x="2227" y="1087.5"/>
         </scene>
         <!--Geo Fence Map View Controller-->
         <scene sceneID="ufC-wZ-h7g">

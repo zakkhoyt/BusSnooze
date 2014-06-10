@@ -7,14 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 
 @class VWWGeoFenceDetailsViewController;
 @class VWWGeoFence;
+
 @protocol VWWGeoFenceDetailsViewControllerDelegate <NSObject>
 -(void)geoFenceDetailsViewControllerDetailButtonAction:(VWWGeoFenceDetailsViewController*)sender;
 -(void)geoFenceDetailsViewControllerDoneButtonAction:(VWWGeoFenceDetailsViewController*)sender;
+-(void)geoFenceDetailsViewController:(VWWGeoFenceDetailsViewController*)sender didUpdateSearch:(NSString*)search;
 @end
+
 @interface VWWGeoFenceDetailsViewController : UIViewController
+@property (nonatomic, strong) MKMapView *mapView;
 @property (nonatomic) BOOL detailsVisible;
 @property (nonatomic, weak) id <VWWGeoFenceDetailsViewControllerDelegate> delegate;
 @property (nonatomic, strong) VWWGeoFence *geoFence;

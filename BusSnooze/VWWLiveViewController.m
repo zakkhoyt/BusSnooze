@@ -5,6 +5,8 @@
 //  Created by Zakk Hoyt on 6/8/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
+//  http://www.techotopia.com/index.php/Working_with_Maps_on_iOS_7_with_MapKit_and_the_MKMapView_Class
+
 
 #import "VWWLiveViewController.h"
 #import "VWW.h"

@@ -9,28 +9,23 @@
 #import "VWWGeoFenceDetailsViewController.h"
 #import "VWWGeoFence.h"
 
+#import "VWW.h"
+
 @interface VWWGeoFenceDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UISwitch *enabledSwitch;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-
 @end
 
 @implementation VWWGeoFenceDetailsViewController
 
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.detailsVisible = NO;
+    
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -79,4 +74,20 @@
     self.titleTextField.text = title;
     self.geoFence.title = title;
 }
+
+
+
+
+
+#pragma UISearchBarDelegate
+
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    [self.delegate geoFenceDetailsViewController:self didUpdateSearch:searchText];
+}
+
+- (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
 @end

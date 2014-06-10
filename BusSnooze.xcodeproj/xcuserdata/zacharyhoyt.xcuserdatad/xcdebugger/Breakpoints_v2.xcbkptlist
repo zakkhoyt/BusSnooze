@@ -139,11 +139,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BusSnooze/VWWGeoFenceDetailsViewController.m"
-            timestampString = "423966668.154599"
+            timestampString = "424067201.606226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-doneButtonTouchUpInside:"
             landmarkType = "5">
          </BreakpointContent>
@@ -155,11 +155,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BusSnooze/VWWGeoFenceMapViewController.m"
-            timestampString = "423971337.623635"
+            timestampString = "424067564.361839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "-mapView:didUpdateUserLocation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -171,11 +171,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BusSnooze/VWWGeoFenceMapViewController.m"
-            timestampString = "423971337.623635"
+            timestampString = "424067564.361839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "-mapView:didUpdateUserLocation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -203,11 +203,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BusSnooze/VWWLiveViewController.m"
-            timestampString = "424063145.783189"
+            timestampString = "424065325.800411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -225,6 +225,68 @@
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "-readGeoFencesFromUserDefaults"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BusSnooze/VWWGeoFenceMapViewController.m"
+            timestampString = "424067785.628237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
+            landmarkName = "-geoFenceDetailsViewController:didUpdateSearch:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[VWWGeoFenceMapViewController geoFenceDetailsViewController:didUpdateSearch:]"
+                  moduleName = "BusSnooze"
+                  urlString = "file:///Users/zacharyhoyt/Code/repositories/vww/BusSnooze/BusSnooze/VWWGeoFenceMapViewController.m"
+                  timestampString = "424067490.005994"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "291"
+                  endingLineNumber = "291"
+                  offsetFromSymbolStart = "400">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__78-[VWWGeoFenceMapViewController geoFenceDetailsViewController:didUpdateSearch:]_block_invoke"
+                  moduleName = "BusSnooze"
+                  urlString = "file:///Users/zacharyhoyt/Code/repositories/vww/BusSnooze/BusSnooze/VWWGeoFenceMapViewController.m"
+                  timestampString = "424067490.006151"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "291"
+                  endingLineNumber = "291"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BusSnooze/VWWGeoFenceMapViewController.m"
+            timestampString = "424067785.628237"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "-geoFenceDetailsViewController:didUpdateSearch:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
