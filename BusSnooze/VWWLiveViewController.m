@@ -8,6 +8,8 @@
 
 #import "VWWLiveViewController.h"
 #import "VWW.h"
+#import "VWWGeoFence.h"
+
 @import MapKit;
 
 @interface VWWLiveViewController () <MKMapViewDelegate>
@@ -28,6 +30,36 @@
         [self zoomToLocation:userLocation.location animated:NO];
     }];
 
+    const NSUInteger kCount = 360;
+    
+    for(VWWGeoFence *geoFence in self.geoFences){
+        CLLocationCoordinate2D coordinates[kCount];
+        NSUInteger counter = 0;
+        for(NSUInteger index = 0; index < kCount; index++){
+            float angle = 2 * M_PI * index / 360.0;
+        
+            CLLocationDegrees x = geoFence.coordinate.latitude + 0.01 * sin(angle);
+            CLLocationDegrees y = geoFence.coordinate.longitude + 0.01 * cos(angle);
+            coordinates[index] = CLLocationCoordinate2DMake(x, y);
+            VWW_LOG_INFO(@"Adding point for polygon: %ld %f %f,%f", (long)counter++, angle, x, y);
+        }
+        MKPolygon *worldOverlay = [MKPolygon polygonWithCoordinates:coordinates count:kCount];
+        [self.mapView addOverlay:worldOverlay];
+    }
+    
+//    CLLocationCoordinate2D worldCoords[4] = { {-122.368685,37.750941},
+//        {-122.466939,37.850926},
+//        {-122.568669,37.752687},
+//        {-122.470430,37.650957}};
+    
+//    CLLocationCoordinate2D worldCoords[4] = {
+//        {37,-122},
+//        {36,-122},
+//        {36,-121},
+//        {27,-121},
+//    };
+//    MKPolygon *worldOverlay = [MKPolygon polygonWithCoordinates:worldCoords count:4];
+//    [self.mapView addOverlay:worldOverlay];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -88,7 +120,21 @@
     }
 }
 
-
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay{
+//    MKOverlayRenderer *renderer = [[MKOverlayRenderer alloc]initWithOverlay:overlay];
+//    
+//    
+//    return renderer;
+    
+    
+    if (![overlay isKindOfClass:[MKPolygon class]]) {
+        return nil;
+    }
+    MKPolygon *polygon = (MKPolygon *)overlay;
+    MKPolygonRenderer *renderer = [[MKPolygonRenderer alloc] initWithPolygon:polygon];
+    renderer.fillColor = [[UIColor darkGrayColor] colorWithAlphaComponent:0.4];
+    return renderer;
+}
 
 
 @end
